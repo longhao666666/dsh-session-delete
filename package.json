@@ -1,0 +1,28 @@
+{
+  "name": "@local/dsh-session-delete",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Session delete: a sidebar menu/row action that permanently removes a session's durable log after archiving it",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longhao666666/dsh-session-delete.git"
+  },
+  "exports": {
+    ".": "./host.js",
+    "./client": "./client.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}
